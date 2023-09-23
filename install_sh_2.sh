@@ -10,7 +10,11 @@ echo "KEYMAP="hu"" >> /etc/vconsole.conf
 systemctl enable NetworkManager
 useradd -m -G wheel -s /bin/bash gyro
 echo "%wheel ALL=(ALL) ALL" >> visudo
+clear
+echo "Set root password below:"
 passwd
+clear
+echo "Set user password below:"
 passwd gyro
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
