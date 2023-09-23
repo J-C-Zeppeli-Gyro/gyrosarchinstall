@@ -10,3 +10,8 @@ cd gyrosarchinstall
 
 
 then you can run the sripts!
+
+
+
+
+after_installation.sh is basically a yay installerXD.
