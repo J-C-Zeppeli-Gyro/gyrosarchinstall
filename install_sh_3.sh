@@ -15,3 +15,5 @@ echo "Set user password below:"
 passwd gyro
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
+clear
+echo "Type exit then reboot the PC!"
