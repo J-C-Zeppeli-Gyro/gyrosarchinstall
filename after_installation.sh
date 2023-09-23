@@ -1,4 +1,4 @@
-sudo pacman -Syu pulseaudio fakeroot go make gcc
+sudo pacman -Syu pulseaudio fakeroot go make gcc git neofetch base-devel
 mkdir ~/aur
 cd ~/aur
 git clone https://aur.archlinux.org/yay.git

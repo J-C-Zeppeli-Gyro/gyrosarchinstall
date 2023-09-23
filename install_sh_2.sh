@@ -3,5 +3,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 clear
 echo "Run install script no. 3!"
 echo "Just type in: ./install_sh_3.sh"
-cp install_sh_3.sh /mnt/ 
+cp * /mnt/ 
 arch-chroot /mnt
