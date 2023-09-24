@@ -18,4 +18,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 clear
 mkdir /home/gyro/gyrosarchinstall
 mv *.sh /home/gyro/gyrosarchinstall
+umount /dev/sda1
+umount /dev/sda2
 echo "Type exit then reboot the PC!"
