@@ -1,4 +1,6 @@
 mkdir /mnt/boot
+mkfs.vfat -F 32 /dev/sda1
+mkfs.ext4 /edv/sda2
 mount /dev/sda1 /mnt/boot
 mount /dev/sda2 /mnt
 pacstrap /mnt base linux linux-firmware sudo grub efibootmgr networkmanager intel-ucode
