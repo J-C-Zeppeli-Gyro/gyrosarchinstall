@@ -1,7 +1,7 @@
 sudo pacman -Syu fakeroot go make gcc git neofetch base-devel nano neovim openssh wget iwd wireless_tools wpa_supplicant xdg-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber gst-plugins-bad gst-plugins-base gst-plugins-good epiphany
 yay -Syu gst-plugin-openh264
 systemctl --user enable pipewire.service
-systemctl --user enable pipwire-pulse.service
+systemctl --user enable pipewire-pulse.service
 mkdir ~/aur
 cd ~/aur
 git clone https://aur.archlinux.org/yay.git
