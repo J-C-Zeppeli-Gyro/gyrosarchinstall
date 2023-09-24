@@ -23,7 +23,7 @@ Icon=/usr/local/bin/dwm.png
 TryExec=/usr/local/bin/dwm
 Type=XSession
 EOF
-cat << EOF > ~/xprofile
+cat << EOF > ~/.xprofile
 dwmstatus 2>&1 >/dev/null &
 setxkbmap -layout hu,gr -option grp:alt_caps_toggle
 EOF
