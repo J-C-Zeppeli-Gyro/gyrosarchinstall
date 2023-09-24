@@ -17,5 +17,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 clear
 mkdir /home/gyro/gyrosarchinstall
-mv *.sh /home/gyro/gyrosarchinstall
+cp *.sh /home/gyro/gyrosarchinstall
+chmod 777 /home/gyro/gyrosarchinstall/*
+cp *.sh /root/gyrosarchinstall
 echo "Type exit and run the 4th script!"
