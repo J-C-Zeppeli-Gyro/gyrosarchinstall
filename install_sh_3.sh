@@ -18,7 +18,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 clear
 mkdir /home/gyro/gyrosarchinstall
 mv *.sh /home/gyro/gyrosarchinstall
+exit
 umount /mnt/boot
 umount /mnt
-exit
 echo "Installation is  completed. Reboot the PC!"
