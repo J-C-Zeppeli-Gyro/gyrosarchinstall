@@ -15,6 +15,3 @@ then you can run the sripts!
 
 
 after_installation.sh is basically a yay installerXD.
-
-
-to run the dwm script use sudo if you have the permission.
