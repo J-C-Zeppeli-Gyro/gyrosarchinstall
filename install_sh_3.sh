@@ -20,4 +20,5 @@ mkdir /home/gyro/gyrosarchinstall
 mv *.sh /home/gyro/gyrosarchinstall
 umount /dev/sda1
 umount /dev/sda2
-echo "Type exit then reboot the PC!"
+exit
+echo "Installation is  completed. Reboot the PC!"
