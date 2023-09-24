@@ -6,4 +6,4 @@ echo "bind =, XF86AudioRaiseVolume, exec, pw-volume change +5%" >> ~/.config/hyp
 echo "bind =, XF86AudioLowerVolume, exec, pw-volume change -5%" >> ~/.config/hypr/hyprland.conf
 echo "bind =, XF86AudioMute, exec, pw-volume mute toggle" >> ~/.config/hypr/hyprland.conf
 sudo systemctl enable sddm
-sudo reboot
+#sudo reboot

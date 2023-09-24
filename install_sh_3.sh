@@ -5,19 +5,24 @@ locale-gen
 echo "en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP="hu"" >> /etc/vconsole.conf
 systemctl enable NetworkManager
-useradd -m -G wheel -s /bin/bash gyro
+echo "Please enter your name for the new user: "
+read username
+useradd -m -G wheel -s /bin/bash $username
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 clear
 echo "Set root password below:"
 passwd
 clear
-echo "Set user password below:"
-passwd gyro
+echo "Set $username's password below:"
+passwd $username
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 clear
-mkdir /home/gyro/gyrosarchinstall
-cp *.sh /home/gyro/gyrosarchinstall
-chmod 777 /home/gyro/gyrosarchinstall/*
+mkdir /home/$username/gyrosarchinstall
+cp *.sh /home/$username/gyrosarchinstall
+chmod 777 /home/$username/gyrosarchinstall/*
 cp *.sh /root/gyrosarchinstall
+echo "Enter the hostname: "
+read hostname
+echo $hostname >> /ect/hostname
 echo "Type exit and run the 4th script!"
