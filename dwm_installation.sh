@@ -1,4 +1,4 @@
-sudo pacman -Syu base-devel git libx11 libxft xorg-server xorg-xinit terminus-font xinerama sddm
+sudo pacman -Syu base-devel git libx11 libxft xorg-server xorg-xinit terminus-font libxinerama sddm
 mkdir -p ~/.local/src
 git clone git://git.suckless.org/st ~/.local/src/st
 git clone git://git.suckless.org/dmenu ~/.local/src/dmenu
@@ -12,7 +12,22 @@ sudo make install
 cd ~/.local/src/dwm
 make clean
 sudo make install
-touch ~/.xinitrc
-echo "exec dwm" >> ~/.xinitrc
+cat << EOF > /usr/share/xsessions/.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=DWM
+Comment=Log in using the Dynamic Window Manager
+Exec=/usr/local/bin/dwm
+Icon=/usr/local/bin/dwm.png
+TryExec=/usr/local/bin/dwm
+Type=XSession
+EOF
+cat << EOF > ~/xprofile
+dwmstatus 2>&1 >/dev/null &
+setxkbmap -layout hu,gr -option grp:alt_caps_toggle
+EOF
+cat << EOF > ~/.xinitrc
+exec dwm
+EOF
 sudo systemctl enable sddm
 reboot
