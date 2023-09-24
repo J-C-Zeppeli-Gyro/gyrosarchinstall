@@ -1,4 +1,4 @@
-sudo pacman -S base-devel git libx11 libxft xorg-server xorg-xinit terminus-font xinerama sddm
+sudo pacman -Syu base-devel git libx11 libxft xorg-server xorg-xinit terminus-font xinerama sddm
 mkdir -p ~/.local/src
 git clone git://git.suckless.org/st ~/.local/src/st
 git clone git://git.suckless.org/dmenu ~/.local/src/dmenu
