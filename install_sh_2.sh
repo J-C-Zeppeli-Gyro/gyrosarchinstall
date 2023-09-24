@@ -1,7 +1,7 @@
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 mount /dev/sda2 /mnt
-pacstrap /mnt base linux linux-firmware sudo grub efibootmgr networkmanager intel-ucode vim
+pacstrap /mnt base linux linux-firmware sudo grub efibootmgr networkmanager intel-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 clear
 echo "Run install script no. 3!"

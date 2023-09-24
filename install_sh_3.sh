@@ -6,7 +6,7 @@ echo "en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP="hu"" >> /etc/vconsole.conf
 systemctl enable NetworkManager
 useradd -m -G wheel -s /bin/bash gyro
-echo "%wheel ALL=(ALL:ALL) ALL" >> /ect/sudoers
+echo "%wheel ALL=(ALL:ALL) ALL" >> /ect/sudoers.d
 clear
 echo "Set root password below:"
 passwd
