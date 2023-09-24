@@ -12,7 +12,8 @@ sudo make install
 cd ~/.local/src/dwm
 make clean
 sudo make install
-cat << EOF > /usr/share/xsessions/.desktop
+sudo mkdir /usr/share/xsessions
+sudo cat << EOF > /usr/share/xsessions/.desktop
 [Desktop Entry]
 Encoding=UTF-8
 Name=DWM
