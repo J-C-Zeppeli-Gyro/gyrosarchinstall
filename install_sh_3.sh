@@ -2,7 +2,7 @@ ln -sf /usr/share/zoneinfo/Europe/Budapest /etc/localtime
 hwclock --systohc
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
-echo "en_US.UTF-8" >> /etc/locale.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP="hu"" >> /etc/vconsole.conf
 systemctl enable NetworkManager
 echo -n "Please enter your name for the new user: "
