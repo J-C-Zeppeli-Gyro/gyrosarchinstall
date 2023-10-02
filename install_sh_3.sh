@@ -19,8 +19,8 @@ while [ "$valid_input" == false ]; do
     fi
 done
 sed -i 's/^#ParallelDownloads = 5/ParallelDownloads = 5/' /etc/pacman.conf
-sed -i 's/^#[multilib]/[multilib]/' /etc/pacman.conf
-sed -i 's/^#Include = /etc/pacman.d/mirriorlist/Include = /etc/pacman.d/mirriorlist/' /etc/pacman.conf
+echo '[multilib]' >> /etc/pacman.conf
+echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 echo "Set root password below:"
 passwd
 clear
