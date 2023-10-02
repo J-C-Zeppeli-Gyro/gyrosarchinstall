@@ -6,10 +6,10 @@ mount /dev/sda1 /mnt/boot
 swapon /dev/sda2
 mount /dev/sda3 /mnt
 rm -rf /etc/pacman.d/mirrorlist
-cp .mirriors.txt /etc/pacman.d/mirrorlist
+cp mirrors.txt /etc/pacman.d/mirrorlist
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bk
 pacman -Sy pacman-contrib
-rankmirriors -n 6 /etc/pacman.d/mirrorlist.bk > /etc/pacman.d/mirrorlist
+rankmirrors -n 6 /etc/pacman.d/mirrorlist.bk > /etc/pacman.d/mirrorlist
 valid_input=false
 while [ "$valid_input" == false ]; do
     echo -n "What CPU do you have? Intel or Amd? (intel, amd - case sensitive so lowercase only!) "
