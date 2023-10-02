@@ -36,6 +36,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 clear
 mkdir /home/$username/gyrosarchinstall
 cp *.sh /home/$username/gyrosarchinstall
+chown $username:$username /home/$username/gyrosarchinstall
 chmod 777 /home/$username/gyrosarchinstall/*
 mkdir /root/gyrosarchinstall
 mv *.sh /root/gyrosarchinstall
