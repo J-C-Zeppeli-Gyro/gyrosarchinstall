@@ -5,13 +5,29 @@ locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP="hu"" >> /etc/vconsole.conf
 systemctl enable NetworkManager
-echo -n "Please enter your name for the new user: "
-read username
-useradd -m -G wheel -s /bin/bash $username
-sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
-clear
+valid_input=false
+while [ "$valid_input" == false ]; do
+    echo -n "Do you have an SSD? (yes, no - case sensitive so lowercase only!) "
+    read ssd
+    if [ "$ssd" == "yes" ]; then
+        systemctl enable fstrim.timer
+        valid_input=true
+    elif [ "$ssd" == "no" ]; then
+        valid_input=true
+    else
+        echo "Can't figure it out..."
+    fi
+done
+sed -i 's/^#ParallelDownloads = 5/ParallelDownloads = 5/' /etc/pacman.conf
+sed -i 's/^#[multilib]/[multilib]/' /etc/pacman.conf
+sed -i 's/^#Include = /etc/pacman.d/mirriorlist/Include = /etc/pacman.d/mirriorlist/' /etc/pacman.conf
 echo "Set root password below:"
 passwd
+clear
+echo -n "Please enter a name for the new privileged user: "
+read username
+useradd -m -g users -G wheel,storage,power -s /bin/bash $username
+sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 clear
 echo "Set $username's password below:"
 passwd $username
@@ -21,7 +37,9 @@ clear
 mkdir /home/$username/gyrosarchinstall
 cp *.sh /home/$username/gyrosarchinstall
 chmod 777 /home/$username/gyrosarchinstall/*
+mkdir /root/gyrosarchinstall
 mv *.sh /root/gyrosarchinstall
+chmod 777 /root/gyrosarchinstall/*
 echo -n "Enter the hostname: "
 read hostname
 echo $hostname >> /etc/hostname
