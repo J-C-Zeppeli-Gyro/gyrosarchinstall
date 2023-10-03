@@ -31,6 +31,8 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 clear
 echo "Set $username's password below:"
 passwd $username
+mkdir /boot/efi
+mount /dev/sda1 /boot/efi
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 #clear
