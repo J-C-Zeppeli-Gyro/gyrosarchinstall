@@ -24,7 +24,7 @@ while [ "$valid_input" == false ]; do
         echo "Invalid CPU type. Please enter amd or intel."
     fi
 done
-genfstab -U -p /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 clear
 echo "Run install script no. 3!"
 echo "Just type in: ./install_sh_3.sh"

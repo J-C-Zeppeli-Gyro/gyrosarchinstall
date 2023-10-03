@@ -33,7 +33,7 @@ echo "Set $username's password below:"
 passwd $username
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-clear
+#clear
 mkdir /home/$username/gyrosarchinstall
 cp *.sh /home/$username/gyrosarchinstall
 chown $username:$username /home/$username/gyrosarchinstall
