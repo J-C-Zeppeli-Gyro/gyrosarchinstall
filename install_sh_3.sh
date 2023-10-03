@@ -26,7 +26,7 @@ passwd
 clear
 echo -n "Please enter a name for the new privileged user: "
 read username
-useradd -m -g users -G wheel,storage,power -s /bin/bash $username
+useradd -m -G wheel -s /bin/bash $username
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 clear
 echo "Set $username's password below:"
