@@ -1,5 +1,7 @@
 # gyrosarchinstall
 
+
+Note that the scripts wont work in VirtualBox!
 When you are in the Arch iso download git and this repo
 
 pacman -Sy git
